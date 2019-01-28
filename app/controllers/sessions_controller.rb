@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
 
   def create
   	#calling the record from the db
-  	?user = User.find_by(email: params[:session][:email].downcase)
-  	if ?user && ?user.authenticate(params[:session][:password])
+  	user = User.find_by(email: params[:session][:email].downcase)
+  	if user && user.authenticate(params[:session][:password])
   		#redirect to the paage 
-  		log_in ?user
-  		params[:session][:remember_me] == '1' ? remember ?user : forget(?user) 
-  		redirect_to ?user
+  		log_in user
+  		 params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+  		redirect_back_or user
   	else
   		#include error message
   		#if rendering same page like get ra di post. flash.now coz no request 
