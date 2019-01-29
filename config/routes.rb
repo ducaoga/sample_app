@@ -17,4 +17,5 @@
 
 
   resources :users
+  resources :microposts , only: [:create, :destroy]
 end

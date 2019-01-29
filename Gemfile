@@ -10,12 +10,20 @@ end
 gem 'rails', '~> 5.1.6'
 gem 'bootstrap-sass', '3.3.7'
 gem 'rails-controller-testing'
+
+#session stuff
 gem 'bcrypt', '3.1.12'
-#pagination
+
+#adding fake data
 gem 'faker',                   '1.7.3'
+
+#pagination
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
+# for uploading pic, CarrierWave associated with a corresponding attribute in an Active Record model
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
