@@ -5,16 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+=begin
 
-=begin	
-rescue Exception => e
-	
-end
-
-User.create(name: "Example User",
-			email: "example@rails.com",
-			password: "foobar",
-			password_confirmation: "foobar",
+User.create(name: "Gail Ducs",
+			email: "gail@gmail.com",
+			password: "gail123",
+			password_confirmation: "gail123",
 			admin: true)
 
 99.times do |n|
@@ -33,12 +29,12 @@ users = User.order(:created_at).take(6)
 	content = Faker::Lorem.sentence(5)
 	users.each { |user| user.microposts.create!(content: content)}
 end
-=begin
+=end
 
 # Following relationships
 users = User.all
-user  = users.second
-following = users[112..150]
-followers = users[111..151]
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
 following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) =end
+followers.each { |follower| follower.follow(user) }
